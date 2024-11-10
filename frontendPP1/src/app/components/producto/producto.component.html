@@ -1,1 +1,11 @@
-<p>producto works!</p>
+<div class="productos">
+    <h1>Lista de productos</h1>
+    <ul>
+        <li *ngFor="let producto of productos">
+             <strong>{{producto.nombre}}</strong>
+             <p>Precio: {{producto.precio}}</p>
+             <p>Stock Disponible: {{producto.stock}}</p>
+        </li>
+    </ul>
+    
+</div>

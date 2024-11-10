@@ -9,7 +9,7 @@ import { Producto } from '../interfaces/producto';
 })
 export class ProductoService {
 
-  private apiUrl = "http:localhost:8080/productos";
+  private apiUrl = "http://localhost:8080/productos";
 
   constructor(private http: HttpClient) { }
 
