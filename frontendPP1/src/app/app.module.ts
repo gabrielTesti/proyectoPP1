@@ -7,6 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ProductoComponent } from './components/producto/producto.component';
+import {MatTableModule} from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+
 
 
 @NgModule({
@@ -18,7 +21,9 @@ import { ProductoComponent } from './components/producto/producto.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

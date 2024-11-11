@@ -9,15 +9,18 @@ import { Producto } from '../interfaces/producto';
 })
 export class ProductoService {
 
-  private apiUrl = "http://localhost:8080/productos";
 
-  constructor(private http: HttpClient) { }
+private apiUrl = "http://localhost:8080/productos"
 
- obtenerTodosLosProductos():Observable<Producto[]>{
-  return this.http.get<Producto[]>(this.apiUrl);
- }
+constructor(private http: HttpClient) { }
+
+
+obtenerTodosLosProductos():Observable<Producto[]>{
+  return this.http.get<Producto[]>(this.apiUrl)
+}
 
 
 
 
 }
+ 
