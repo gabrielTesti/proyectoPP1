@@ -1,15 +1,53 @@
+
 .container {
     display: flex;
     flex-direction: column;
-   align-items: center;
-   margin-top: 20px;
+    align-items: center;
+    margin-top: 20px;
   }
-
+  
+  
   .title {
-    font-family: 'Merriweather', serif;
-    font-size: 2.5rem; 
+    font-size: 50px;
     font-weight: bold;
-    color: #3f51b5;
+    color: white;
     margin-bottom: 20px;
+    margin-top: 25px;
     text-align: center;
+    letter-spacing: 2px;
   }
+  
+ 
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+  }
+  
+
+
+th{
+    font-size: 20px;
+    
+}
+
+td{
+    font-size: 18px
+}
+
+
+
+
+
+  /* css de botones listos */
+
+  button.mat-icon-button {
+    margin: 0 5px;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  button.mat-icon-button:hover {
+    transform: scale(1.1);
+  }
+  
+  
