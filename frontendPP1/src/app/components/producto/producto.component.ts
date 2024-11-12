@@ -13,14 +13,8 @@ export class ProductoComponent implements OnInit{
   displayedColumns: string[] = ["id", "nombre", "precio", "stock", "acciones"] //define las columnas
  //MatTableDataSource es una herramienta de Material para gestionar los datos
  dataSource = new MatTableDataSource<Producto>();
-
-
   //inyectamos el servicio creado e importado
 constructor(private productoService: ProductoService){}
-
-
-
-
 
 
 
@@ -35,7 +29,9 @@ ngOnInit(): void {
     )
 }
 
-
+applyFilter(filterValue: string) {
+  this.dataSource.filter = filterValue.trim().toLowerCase();
+}
 
 
 

@@ -1,5 +1,8 @@
 <div class="container"> 
   <h1 class="title" >Lista de productos</h1>
+
+  <input class="filtro"  #filterInput placeholder="Buscar producto por nombre" (keyup)="applyFilter(filterInput.value)">
+
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <!-- columna id -->
     <ng-container matColumnDef="id">

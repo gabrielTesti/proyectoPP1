@@ -12,6 +12,11 @@ import { MatInputModule } from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
+import {MatPaginatorModule} from '@angular/material/paginator';
+
+import { MatTableDataSource } from '@angular/material/table';
+
+
 
 
 @NgModule({
@@ -27,7 +32,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatTableModule,
     MatInputModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

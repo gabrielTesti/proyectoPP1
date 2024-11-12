@@ -36,7 +36,11 @@ td{
 }
 
 
-
+.filtro{
+    margin-top: 20px;
+    font-size: 20px;
+    width: 260px;
+}
 
 
   /* css de botones listos */
