@@ -3,6 +3,13 @@
 
   <input class="filtro"  #filterInput placeholder="Buscar producto" (keyup)="applyFilter(filterInput.value)">
 
+  <div class="contenedor-boton">
+    <button class="boton-agregar" mat-flat-button>
+      <mat-icon>add</mat-icon>
+      Agregar producto
+    </button>
+  </div>
+
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <!-- columna id -->
     <ng-container matColumnDef="id">

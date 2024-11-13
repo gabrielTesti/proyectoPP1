@@ -40,7 +40,6 @@ applyFilter(filterValue: string) {
   this.dataSource.filter = filterValue.trim().toLowerCase();
 }
 
-
   
 eliminarProducto(id: number): void {
   this.productoService.eliminarProducto(id).subscribe({

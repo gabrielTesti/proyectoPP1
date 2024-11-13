@@ -54,4 +54,25 @@ td{
     transform: scale(1.1);
   }
   
- 
+
+
+
+
+  ::ng-deep .boton-agregar {
+    background-color: rgb(3, 3, 73) !important;
+    color: white !important;
+    font-size: medium;
+    border-radius: 5px;  
+  }
+
+
+  ::ng-deep .boton-agregar:hover{
+    background-color: rgb(8, 8, 106) !important;
+    transition: background-color 0.3s ease;
+  }
+
+
+  .contenedor-boton {
+    align-self: flex-start; 
+   
+}
