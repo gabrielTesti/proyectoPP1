@@ -3,7 +3,7 @@ import { ProductoService } from 'src/app/services/producto.service';
 import { Producto } from 'src/app/interfaces/producto';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
-import { MatSnackBar } from '@angular/material/snack-bar'; 
+
 
 
 @Component({
@@ -17,10 +17,8 @@ export class ProductoComponent implements OnInit{
  //MatTableDataSource es una herramienta de Material para gestionar los datos
  dataSource = new MatTableDataSource<Producto>();
   //inyectamos el servicio creado e importado
-  
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-constructor(private productoService: ProductoService,
-  private snackBar: MatSnackBar
+constructor(private productoService: ProductoService
 ){}
 
 

@@ -13,6 +13,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatSnackBarModule } from '@angular/material/snack-bar';  
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 
@@ -34,7 +35,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatIconModule,
     MatButtonModule,
     MatPaginatorModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTooltipModule
     
   ],
   providers: [],
