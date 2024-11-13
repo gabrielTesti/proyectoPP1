@@ -19,8 +19,8 @@ obtenerTodosLosProductos():Observable<Producto[]>{
   return this.http.get<Producto[]>(this.apiUrl)
 }
 
-
-
+eliminarProducto(id: number):Observable<void>{
+  return this.http.delete<void>(`${this.apiUrl}/${id}`)
 
 }
- 
+}

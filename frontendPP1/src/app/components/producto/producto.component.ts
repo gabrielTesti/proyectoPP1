@@ -3,6 +3,8 @@ import { ProductoService } from 'src/app/services/producto.service';
 import { Producto } from 'src/app/interfaces/producto';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar'; 
+
 
 @Component({
   selector: 'app-producto',
@@ -17,7 +19,9 @@ export class ProductoComponent implements OnInit{
   //inyectamos el servicio creado e importado
   
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-constructor(private productoService: ProductoService){}
+constructor(private productoService: ProductoService,
+  private snackBar: MatSnackBar
+){}
 
 
 
@@ -37,6 +41,25 @@ ngOnInit(): void {
 applyFilter(filterValue: string) {
   this.dataSource.filter = filterValue.trim().toLowerCase();
 }
+
+
+  
+eliminarProducto(id: number): void {
+  this.productoService.eliminarProducto(id).subscribe({
+    next: () => {
+      // Eliminar de la lista si la eliminación fue exitosa
+      this.dataSource.data = this.dataSource.data.filter(producto => producto.id !== id);
+      alert('Producto eliminado con éxito');
+    },
+    error: (error) => {
+      console.error("Error al eliminar el producto ", error)
+      alert('Error al eliminar el producto');
+    }
+  });
+}
+
+ 
+
 
 
 
