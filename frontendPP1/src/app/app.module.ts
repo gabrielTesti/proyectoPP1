@@ -14,8 +14,6 @@ import { MatButtonModule } from '@angular/material/button';
 
 import {MatPaginatorModule} from '@angular/material/paginator';
 
-import { MatTableDataSource } from '@angular/material/table';
-
 
 
 
@@ -33,7 +31,7 @@ import { MatTableDataSource } from '@angular/material/table';
     MatInputModule,
     MatIconModule,
     MatButtonModule,
-    MatPaginatorModule
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

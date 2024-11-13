@@ -54,4 +54,7 @@ td{
     transform: scale(1.1);
   }
   
-  
+  mat-paginator{
+    justify-content: end;
+    align-items: end;
+  }

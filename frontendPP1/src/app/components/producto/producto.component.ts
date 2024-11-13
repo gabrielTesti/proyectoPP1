@@ -1,7 +1,8 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { ProductoService } from 'src/app/services/producto.service';
 import { Producto } from 'src/app/interfaces/producto';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-producto',
@@ -14,6 +15,8 @@ export class ProductoComponent implements OnInit{
  //MatTableDataSource es una herramienta de Material para gestionar los datos
  dataSource = new MatTableDataSource<Producto>();
   //inyectamos el servicio creado e importado
+  
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 constructor(private productoService: ProductoService){}
 
 
@@ -22,6 +25,8 @@ ngOnInit(): void {
     this.productoService.obtenerTodosLosProductos().subscribe(
       (productos)=>{
         this.dataSource.data=productos
+        //vinculamos el paginator con el dataSource
+        this.dataSource.paginator = this.paginator
       },
       (error)=>{
         console.error("Error al obtener el producto", error)
