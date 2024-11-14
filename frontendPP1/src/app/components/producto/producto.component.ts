@@ -75,10 +75,9 @@ abrirDialogo(): void {
   });
 
 
-  dialogRef.afterClosed().subscribe((productoCreado: Producto | undefined)=>{
+  dialogRef.componentInstance.productoCreado.subscribe((productoCreado: Producto | undefined)=>{
     if(productoCreado){
-      this.productos.push(productoCreado);
-      this.dataSource.data = [...this.productos]
+      this.dataSource.data = [...this.dataSource.data, productoCreado]
     }
 
   })

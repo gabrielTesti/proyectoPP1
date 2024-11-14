@@ -45,7 +45,18 @@ crearProducto(){
 
         this.productoCreado.emit(productoCreado)
 
-        this.dialogRef.close();
+        this.productoForm.reset({
+          nombre: '',
+          precio: 0,
+          stock: 0
+        }, { emitEvent: false }); //hace que el evento de la validacion del stock se anule
+
+        this.productoForm.markAsPristine();
+
+        this.productoForm.markAsTouched();
+       
+
+        this.nombreInput.nativeElement.focus(); 
       },
       (error)=>{
         console.log("Error al crear producto", error);
