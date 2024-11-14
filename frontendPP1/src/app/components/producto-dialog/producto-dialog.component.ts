@@ -1,8 +1,7 @@
 import { Component, Inject} from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ProductoService } from 'src/app/services/producto.service';
-import { Producto } from 'src/app/interfaces/producto';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-producto-dialog',
