@@ -39,7 +39,6 @@ ngOnInit(): void {
     this.productoService.obtenerTodosLosProductos().subscribe(
       (productos)=>{
         this.dataSource.data=productos
-        //vinculamos el paginator con el dataSource
         this.dataSource.paginator = this.paginator
       },
       (error)=>{
@@ -74,11 +73,14 @@ abrirDialogo(): void {
   const dialogRef = this.dialog.open(ProductoDialogComponent, {
     width: '400px'
   });
-  dialogRef.afterClosed().subscribe(result=>{
-    if(result){
-      this.productos.push(result);
+
+
+  dialogRef.afterClosed().subscribe((productoCreado: Producto | undefined)=>{
+    if(productoCreado){
+      this.productos.push(productoCreado);
       this.dataSource.data = [...this.productos]
     }
+
   })
 
 }
@@ -94,3 +96,4 @@ abrirDialogo(): void {
 
 
 }
+

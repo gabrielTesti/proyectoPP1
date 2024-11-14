@@ -1,7 +1,8 @@
-import { Component, ElementRef, Inject, OnInit, ViewChild} from '@angular/core';
+import { Component, ElementRef, Inject, OnInit, ViewChild, Output, EventEmitter} from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ProductoService } from 'src/app/services/producto.service';
 import { FormBuilder, FormGroup, Validators} from '@angular/forms';
+import { Producto } from 'src/app/interfaces/producto';
 
 
 @Component({
@@ -15,6 +16,7 @@ export class ProductoDialogComponent implements OnInit{
  @ViewChild("precioInput", {static: false}) precioInput!: ElementRef;
  @ViewChild("stockInput", {static: false}) stockInput!: ElementRef;
 
+ @Output() productoCreado = new EventEmitter<Producto>();  // EventEmitter para comunicar al componente padre
 
   productoForm: FormGroup;
 
@@ -40,6 +42,8 @@ crearProducto(){
     this.productoService.crearProducto(nuevoProducto).subscribe(
       (productoCreado)=>{
         console.log("Producto creado", productoCreado);
+
+        this.productoCreado.emit(productoCreado)
 
         this.dialogRef.close();
       },
