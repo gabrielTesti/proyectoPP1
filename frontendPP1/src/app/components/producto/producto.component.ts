@@ -70,11 +70,26 @@ eliminarProducto(id: number): void {
  
 
 
-abrirDialogo() {
+abrirDialogo(): void {
   const dialogRef = this.dialog.open(ProductoDialogComponent, {
     width: '400px'
   });
+  dialogRef.afterClosed().subscribe(result=>{
+    if(result){
+      this.productos.push(result);
+      this.dataSource.data = [...this.productos]
+    }
+  })
+
 }
+
+
+
+
+
+
+
+
 
 
 
