@@ -10,7 +10,7 @@
   .title {
     font-size: 50px;
     font-weight: bold;
-    color: white;
+    color:gold;
     margin-bottom: 20px;
     margin-top: 25px;
     text-align: center;
@@ -59,7 +59,8 @@ td{
 
 
   ::ng-deep .boton-agregar {
-    background-color: rgb(3, 3, 73) !important;
+    /* background-color: rgb(3, 3, 73) !important; */
+    background-color:rgb(169, 128, 24) !important;
     color: white !important;
     font-size: medium;
     border-radius: 5px;  
@@ -67,7 +68,7 @@ td{
 
 
   ::ng-deep .boton-agregar:hover{
-    background-color: rgb(8, 8, 106) !important;
+    background-color: gold !important;
     transition: background-color 0.3s ease;
   }
 

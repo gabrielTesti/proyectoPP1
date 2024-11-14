@@ -1,7 +1,7 @@
 /* Estilos generales */
 h2[mat-dialog-title] {
     font-size: 1.8rem;
-    color: #00695c;
+    color: rgb(227, 195, 8);
     text-align: center;
     margin-bottom: 10px;
     font-weight: bold;
@@ -20,7 +20,8 @@ h2[mat-dialog-title] {
   }
   
   mat-label {
-    color: #555;
+    /* color: #555; */
+    color: rgb(145, 108, 14);
     font-weight: 600;
   }
   
@@ -62,11 +63,12 @@ h2[mat-dialog-title] {
   
   button[mat-button]:last-child {
     color: #fff;
-    background-color: #00796b;
+    background-color: #740505;
+    transition: background-color 0.3s ease;
   }
   
   button[mat-button]:last-child:hover {
-    background-color: #00695c;
+    background-color: #ae1515;
   }
   
   button[mat-button]:disabled {
