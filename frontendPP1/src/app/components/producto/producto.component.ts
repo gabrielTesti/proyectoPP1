@@ -3,6 +3,8 @@ import { ProductoService } from 'src/app/services/producto.service';
 import { Producto } from 'src/app/interfaces/producto';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatDialog } from '@angular/material/dialog';
+import { ProductoDialogComponent } from '../producto-dialog/producto-dialog.component';
 
 
 
@@ -16,9 +18,19 @@ export class ProductoComponent implements OnInit{
   displayedColumns: string[] = ["id", "nombre", "precio", "stock", "acciones"] //define las columnas
  //MatTableDataSource es una herramienta de Material para gestionar los datos
  dataSource = new MatTableDataSource<Producto>();
+
+ nuevoProducto: Producto = {
+  nombre: "",
+  precio: 0,
+  stock:0,
+ }
+
+
+
   //inyectamos el servicio creado e importado
   @ViewChild(MatPaginator) paginator!: MatPaginator;
-constructor(private productoService: ProductoService
+constructor(private productoService: ProductoService,
+  private dialog: MatDialog
 ){}
 
 
@@ -58,10 +70,11 @@ eliminarProducto(id: number): void {
  
 
 
-
-
-
-
+abrirDialogo() {
+  const dialogRef = this.dialog.open(ProductoDialogComponent, {
+    width: '400px'
+  });
+}
 
 
 

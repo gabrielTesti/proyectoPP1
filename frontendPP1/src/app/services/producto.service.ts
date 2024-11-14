@@ -23,4 +23,12 @@ eliminarProducto(id: number):Observable<void>{
   return this.http.delete<void>(`${this.apiUrl}/${id}`)
 }
 
+
+crearProducto(producto: Producto):Observable<Producto>{
+return this.http.post<Producto>(`${this.apiUrl}`, producto)
+}
+
+
+
+
 }

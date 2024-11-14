@@ -4,7 +4,7 @@
   <input class="filtro"  #filterInput placeholder="Buscar producto" (keyup)="applyFilter(filterInput.value)">
 
   <div class="contenedor-boton">
-    <button class="boton-agregar" mat-flat-button>
+    <button class="boton-agregar" mat-flat-button   (click)="abrirDialogo()">
       <mat-icon>add</mat-icon>
       Agregar producto
     </button>

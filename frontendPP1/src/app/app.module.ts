@@ -14,7 +14,11 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatSnackBarModule } from '@angular/material/snack-bar';  
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { MatDialogModule } from '@angular/material/dialog'; 
 
+import { MatFormFieldModule } from '@angular/material/form-field';  // Para formularios
+import { ReactiveFormsModule } from '@angular/forms';
+import { ProductoDialogComponent } from './components/producto-dialog/producto-dialog.component';  // Si usas formularios reactivos
 
 
 
@@ -24,7 +28,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     AppComponent,
-    ProductoComponent
+    ProductoComponent,
+    ProductoDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,10 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     MatButtonModule,
     MatPaginatorModule,
     MatSnackBarModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    ReactiveFormsModule
     
   ],
   providers: [],
