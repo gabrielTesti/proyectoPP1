@@ -33,6 +33,9 @@ constructor( private productoService: ProductoService,
 }
 
 ngOnInit(): void {
+    if(this.data?.producto){
+      this.productoForm.patchValue(this.data.producto);
+    }
     
 }
 
@@ -87,6 +90,35 @@ cerrar(){
   this.dialogRef.close();
 }
 
+
+
+
+
+
+
+actualizarProducto(){
+  if(this.productoForm.valid && this.data?.producto){      // this.data?.producto verifica que data contiene un objeto producto.
+    const productoActualizado = this.productoForm.value;
+  
+  this.productoService.actualizarProducto(this.data.producto.id, productoActualizado).subscribe(
+    (response)=>{
+      console.log("Producto actualizado", response);
+
+      this.dialogRef.close(response);
+    },
+    (error)=>{
+      console.log("Error al actualizar producto", error);
+    }
+  );
+  
+}
+
+
+
+
+
+
+}
 
 
 

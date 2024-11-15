@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Crear Producto</h2>
+<h2 mat-dialog-title>{{ data?.producto ? 'Editar Producto' : 'Crear Producto' }}</h2>  <!--  si data?.producto es falso (osea que no existe un producto), se muestra el titulo Editar Producto -->
 <mat-dialog-content>
   <form [formGroup]="productoForm">
     <mat-form-field>
@@ -25,5 +25,7 @@
 
 <mat-dialog-actions>
   <button mat-button (click)="cerrar()">Cancelar</button>
-  <button mat-button [disabled]="productoForm.invalid" (click)="crearProducto()">Guardar</button>
+  <button mat-button [disabled]="productoForm.invalid" (click)= "data?.producto ? actualizarProducto() : crearProducto()" >
+    Guardar
+    </button>
 </mat-dialog-actions>

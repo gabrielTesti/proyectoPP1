@@ -69,6 +69,9 @@ eliminarProducto(id: number): void {
  
 
 
+
+
+
 abrirDialogo(): void {
   const dialogRef = this.dialog.open(ProductoDialogComponent, {
     width: '400px'
@@ -87,7 +90,28 @@ abrirDialogo(): void {
 
 
 
+abrirDialogoEditar(producto: Producto):void{
+  const dialogRef = this.dialog.open(ProductoDialogComponent,{
+    width: '400px',
+    data: {producto}
+  });
 
+  dialogRef.afterClosed().subscribe(
+    (productoActualizado: Producto | undefined)=>{
+      if(productoActualizado){
+
+        //actualizamos el producto en la tabla
+        const index = this.dataSource.data.findIndex(p=>p.id === producto.id);
+        if(index !== -1){
+          this.dataSource.data[index] = productoActualizado;
+          this.dataSource.data = [...this.dataSource.data] //se forza la actualizacion en la vista
+        }
+      }
+ } )
+
+
+
+}
 
 
 
@@ -95,4 +119,7 @@ abrirDialogo(): void {
 
 
 }
+
+
+
 
