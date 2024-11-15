@@ -41,6 +41,12 @@ ngOnInit(): void {
 
 crearProducto(){
   if(this.productoForm.valid){
+
+    const productoFormValue = this.productoForm.value;
+    productoFormValue.nombre = productoFormValue.nombre.charAt(0).toUpperCase()  + productoFormValue.nombre.slice(1).toLowerCase();
+
+
+
     const nuevoProducto = this.productoForm.value;
     this.productoService.crearProducto(nuevoProducto).subscribe(
       (productoCreado)=>{
@@ -99,6 +105,10 @@ cerrar(){
 actualizarProducto(){
   if(this.productoForm.valid && this.data?.producto){      // this.data?.producto verifica que data contiene un objeto producto.
     const productoActualizado = this.productoForm.value;
+
+    const productoFormValue = this.productoForm.value;
+
+    productoFormValue.nombre = productoFormValue.nombre.charAt(0).toUpperCase() + productoFormValue.nombre.slice(1).toLowerCase();
   
   this.productoService.actualizarProducto(this.data.producto.id, productoActualizado).subscribe(
     (response)=>{
