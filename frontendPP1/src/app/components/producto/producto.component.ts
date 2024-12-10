@@ -15,14 +15,16 @@ import { ProductoDialogComponent } from '../producto-dialog/producto-dialog.comp
 })
 export class ProductoComponent implements OnInit{
   productos: Producto[] = []; //array vacio para almacenar ls productos
-  displayedColumns: string[] = ["id", "nombre", "precio", "stock", "acciones"] //define las columnas
+  displayedColumns: string[] = ["id", "nombre", "precio", "stock", "proveedor", "categoria", "acciones"] //define las columnas
  //MatTableDataSource es una herramienta de Material para gestionar los datos
  dataSource = new MatTableDataSource<Producto>();
 
  nuevoProducto: Producto = {
-  nombre: "",
-  precio: 0,
-  stock:0,
+   nombre: "",
+   precio: 0,
+   stock: 0,
+   proveedor: '',
+   categoria: ''
  }
 
 
