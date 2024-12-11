@@ -19,9 +19,15 @@ obtenerTodosLosProductos():Observable<Producto[]>{
   return this.http.get<Producto[]>(this.apiUrl)
 }
 
-eliminarProducto(id: number):Observable<void>{
+/* eliminarProducto(id: number):Observable<void>{
   return this.http.delete<void>(`${this.apiUrl}/${id}`)
+} */
+
+
+eliminarProducto(id: number): Observable<string> {
+return this.http.delete<string>(`${this.apiUrl}/${id}`, { responseType: 'text' as 'json' });
 }
+  
 
 
 crearProducto(producto: Producto):Observable<Producto>{
