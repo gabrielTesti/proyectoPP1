@@ -15,6 +15,8 @@ export class ProductoDialogComponent implements OnInit{
  @ViewChild("nombreInput", {static: false}) nombreInput!: ElementRef;
  @ViewChild("precioInput", {static: false}) precioInput!: ElementRef;
  @ViewChild("stockInput", {static: false}) stockInput!: ElementRef;
+ @ViewChild("proveedorInput", {static: false}) proveedorInput!: ElementRef;
+ @ViewChild("categoriaInput", {static: false}) categoriaInput!: ElementRef;
 
  @Output() productoCreado = new EventEmitter<Producto>();  // EventEmitter para comunicar al componente padre
 
@@ -28,7 +30,9 @@ constructor( private productoService: ProductoService,
   this.productoForm = this.fb.group({
     nombre: ['', Validators.required],
     precio: ['', [Validators.required, Validators.min(0)]],
-    stock: ['', [Validators.required, Validators.min(0)]]
+    stock: ['', [Validators.required, Validators.min(0)]],
+    proveedor: ['', Validators.required],
+    categoria: ['', Validators.required]
   });
 }
 
@@ -57,7 +61,9 @@ crearProducto(){
         this.productoForm.reset({
           nombre: '',
           precio: 0,
-          stock: 0
+          stock: 0,
+          proveedor: '',
+          categoria: ''
         }, { emitEvent: false }); //hace que el evento de la validacion del stock se anule
 
         this.productoForm.markAsPristine();
@@ -88,7 +94,16 @@ onEnterPrecio(): void{
   this.siguienteElemento(this.stockInput)
 }
 
+
 onEnterStock():void{
+  this.siguienteElemento(this.proveedorInput);
+}
+
+onEnterProveedor(): void {
+  this.siguienteElemento(this.categoriaInput);
+}
+
+onEnterCategoria(): void {
   this.crearProducto();
 }
 
