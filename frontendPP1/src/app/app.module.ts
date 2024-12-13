@@ -18,7 +18,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 
 import { MatFormFieldModule } from '@angular/material/form-field';  // Para formularios
 import { ReactiveFormsModule } from '@angular/forms';
-import { ProductoDialogComponent } from './components/producto-dialog/producto-dialog.component';  // Si usas formularios reactivos
+import { ProductoDialogComponent } from './components/producto-dialog/producto-dialog.component';
+import { AuthComponent } from './components/auth/auth.component';
+import { DialogsComponent } from './components/auth/dialogs/dialogs.component';
+import { LoginDialogComponent } from './components/auth/dialogs/login-dialog/login-dialog.component';
+import { RegisterDialogComponent } from './components/auth/dialogs/register-dialog/register-dialog.component';  // Si usas formularios reactivos
 
 
 
@@ -29,7 +33,11 @@ import { ProductoDialogComponent } from './components/producto-dialog/producto-d
   declarations: [
     AppComponent,
     ProductoComponent,
-    ProductoDialogComponent
+    ProductoDialogComponent,
+    AuthComponent,
+    DialogsComponent,
+    LoginDialogComponent,
+    RegisterDialogComponent
   ],
   imports: [
     BrowserModule,

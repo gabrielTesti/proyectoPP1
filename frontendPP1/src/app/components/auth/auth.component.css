@@ -1,0 +1,168 @@
+
+
+/* 
+:host {
+    display: block;
+    height: 100vh;  
+    overflow: hidden;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .auth-container {
+    text-align: center;
+  }
+   
+
+    */
+
+
+
+
+
+
+
+
+
+/* 
+
+
+
+
+
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #740505; 
+    color: white;
+    text-align: center;
+    overflow: hidden; 
+  }
+  
+  
+  h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: gold; 
+    letter-spacing: 2px;
+   
+  }
+  
+  
+ 
+  
+
+  
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+   .btn-iniciarsesion{
+    background-color: rgb(8, 167, 8);
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 200px;
+   }
+  
+
+
+
+   .btn-registrarse{
+    background-color: rgb(83, 83, 221);
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 200px;
+    
+   }
+
+ */
+
+
+
+
+
+
+
+
+ :host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #740505; 
+    color: white;
+    text-align: center;
+    overflow: hidden; 
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: gold; 
+    letter-spacing: 2px;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Botón Iniciar sesión */
+.btn-iniciarsesion {
+    background-color: rgb(8, 167, 8);
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 200px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover para Iniciar sesión */
+.btn-iniciarsesion:hover {
+    background-color: rgb(99, 234, 99); /* Verde clarito */
+    transform: scale(1.05); /* Efecto de ampliación */
+}
+
+/* Botón Registrarse */
+.btn-registrarse {
+    background-color: rgb(83, 83, 221);
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 200px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+.btn-registrarse:hover {
+    background-color: rgb(141, 141, 242); 
+    transform: scale(1.05); 
+}
