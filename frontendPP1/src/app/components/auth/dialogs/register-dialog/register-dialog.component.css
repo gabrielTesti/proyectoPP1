@@ -1,4 +1,4 @@
-
+/* 
 
 
 mat-form-field {
@@ -9,5 +9,104 @@ mat-form-field {
   button {
     width: 100%;
     margin-top: 20px;
+  }
+   */
+
+
+
+
+
+
+
+   ::ng-deep .register-container {
+    width: 500px;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, #f7f7f7, #e3e9f7);
+    height: 70vh;
+  }
+  
+  .titulo-register{
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: gold;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  mat-form-field input {
+    font-size: 1.3rem;
+    color: #34495e;
+  }
+  
+  mat-form-field mat-label {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+  }
+  
+  button {
+    width: 100%;
+    padding: 1.4rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: #27ae60;
+    color: #fff;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: #2ecc71;
+    transform: scale(1.03);
+  }
+  
+  button[disabled] {
+    background-color: #bdc3c7;
+    color: #ecf0f1;
+    cursor: not-allowed;
+  }
+  
+  .error-message mat-error {
+    font-size: 1.3rem;
+    color: #e74c3c;
+    text-align: center;
+  }
+  
+  .error-message {
+    margin-top: -1rem;
+  }
+  
+  mat-error {
+    font-size: 1.1rem;
+  }
+  
+  @media (max-width: 600px) {
+    ::ng-deep .mat-dialog-container {
+      width: 95%;
+      padding: 2rem;
+    }
+  
+    h2.mat-dialog-title {
+      font-size: 2rem;
+    }
+  
+    button {
+      font-size: 1.2rem;
+      padding: 1rem;
+    }
   }
   

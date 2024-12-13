@@ -1,4 +1,4 @@
-
+/* 
 
 mat-form-field {
     width: 100%;
@@ -8,5 +8,79 @@ mat-form-field {
   button {
     width: 100%;
     margin-top: 20px;
+  }
+   */
+
+
+
+   ::ng-deep .login-container {
+    width: 500px;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #ffffff, #f3f4f6);
+  }
+  
+  .titulo-login {
+    font-size: 30px;
+    font-weight: bold;
+    color: gold;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  mat-form-field input {
+    font-size: 1.1rem;
+  }
+  
+  button {
+    width: 100%;
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    background-color: #2ecc71;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #27ae60;
+  }
+  
+  .error-message mat-error {
+    font-size: 1rem;
+    color: #e74c3c;
+    text-align: center;
+  }
+  
+  .error-message {
+    margin-top: -1rem;
+  }
+  
+  @media (max-width: 600px) {
+    ::ng-deep .mat-dialog-container {
+      width: 90%;
+      padding: 1.5rem;
+    }
+  
+    h2.mat-dialog-title {
+      font-size: 1.5rem;
+    }
+  
+    button {
+      font-size: 1rem;
+      padding: 0.6rem;
+    }
   }
   
