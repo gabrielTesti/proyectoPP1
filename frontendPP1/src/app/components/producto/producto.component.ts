@@ -15,6 +15,7 @@ import { ProductoDialogComponent } from '../producto-dialog/producto-dialog.comp
 })
 export class ProductoComponent implements OnInit{
   productos: Producto[] = []; //array vacio para almacenar ls productos
+  
   displayedColumns: string[] = ["id", "nombre", "precio", "stock","proveedor","categoria", "acciones"] //define las columnas
  //MatTableDataSource es una herramienta de Material para gestionar los datos
  dataSource = new MatTableDataSource<Producto>();
@@ -26,6 +27,23 @@ export class ProductoComponent implements OnInit{
    proveedor: " ",
    categoria:""
  }
+
+ categorias: string[] = [
+  'ALIMENTOS_Y_BEBIDAS',
+  'PRODUCTOS_DE_LIMPIEZA',
+  'ELECTRODOMESTICOS_Y_ELECTRONICA',
+  'PRODUCTOS_DE_HIGIENE_PERSONAL',
+  'TEXTILES_Y_ROPA',
+  'MOBILIARIO_Y_DECORACION',
+  'MATERIALES_DE_CONSTRUCCION_Y_FERRETERIA',
+  'PAPELERIA_Y_OFICINA',
+  'PRODUCTOS_FARMACEUTICOS_Y_MEDICOS',
+  'AUTOMOTRIZ',
+  'PRODUCTOS_DE_JARDINERIA',
+  'JUGUETERIA_Y_ENTRETENIMIENTO',
+  'MASCOTAS',
+  'PRODUCTOS_QUIMICOS'
+];
 
 
 
@@ -82,7 +100,8 @@ applyFilter(filterValue: string) {
 
 abrirDialogo(): void {
   const dialogRef = this.dialog.open(ProductoDialogComponent, {
-    width: '400px'
+    width: '400px',
+    data: { categorias: this.categorias }
   });
 
 
@@ -101,7 +120,7 @@ abrirDialogo(): void {
 abrirDialogoEditar(producto: Producto):void{
   const dialogRef = this.dialog.open(ProductoDialogComponent,{
     width: '400px',
-    data: {producto}
+    data: { producto, categorias: this.categorias } 
   });
 
   dialogRef.afterClosed().subscribe(

@@ -23,6 +23,9 @@ import { AuthComponent } from './components/auth/auth.component';
 import { DialogsComponent } from './components/auth/dialogs/dialogs.component';
 import { LoginDialogComponent } from './components/auth/dialogs/login-dialog/login-dialog.component';
 import { RegisterDialogComponent } from './components/auth/dialogs/register-dialog/register-dialog.component';  // Si usas formularios reactivos
+import { MatSelectModule } from '@angular/material/select'; // Asegúrate de importar MatSelectModule
+import { MatOptionModule } from '@angular/material/core'; // Importar este módulo también puede ser necesario para 'mat-option'
+
 
 
 
@@ -53,7 +56,9 @@ import { RegisterDialogComponent } from './components/auth/dialogs/register-dial
     MatTooltipModule,
     MatDialogModule,
     MatFormFieldModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSelectModule,
+    MatOptionModule
     
   ],
   providers: [],

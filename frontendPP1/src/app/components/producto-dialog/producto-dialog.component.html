@@ -71,14 +71,30 @@
       <mat-error *ngIf="productoForm.get('proveedor')?.hasError('required')">El proveedor es obligatorio</mat-error>
     </mat-form-field>
 
-    <!-- Campo Categoría -->
+  <!--   
     <mat-form-field>
       <mat-label>Categoría</mat-label>
       <input matInput formControlName="categoria" required #categoriaInput (keydown.enter)="onEnterCategoria()" />
       <mat-error *ngIf="productoForm.get('categoria')?.hasError('required')">La categoría es obligatoria</mat-error>
     </mat-form-field>
   </form>
-</mat-dialog-content>
+</mat-dialog-content> -->
+
+
+
+<mat-form-field appearance="fill">
+  <mat-label>Categoria</mat-label>
+  <mat-select formControlName="categoria">
+    <mat-option *ngFor="let categoria of categorias" [value]="categoria">
+      {{ categoria }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+
+
+
+
 
 <mat-dialog-actions>
   <button mat-button (click)="cerrar()">Cancelar</button>
