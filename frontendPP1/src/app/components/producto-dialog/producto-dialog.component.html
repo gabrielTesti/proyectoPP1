@@ -1,70 +1,3 @@
-<!-- 
-
-
- 
-
-
-
-
- <h2 mat-dialog-title>{{ data?.producto ? 'Editar Producto' : 'Crear Producto' }}</h2>
-<mat-dialog-content>
-  <form [formGroup]="productoForm">
-    
-    <mat-form-field>
-      <mat-label>Nombre</mat-label>
-      <input matInput formControlName="nombre" required #nombreInput (keydown.enter)="onEnterNombre()" />
-      <mat-error *ngIf="productoForm.get('nombre')?.hasError('required')">El nombre es obligatorio</mat-error>
-    </mat-form-field>
-
-    
-    <mat-form-field>
-      <mat-label>Precio</mat-label>
-      <input matInput type="number" formControlName="precio" required #precioInput (keydown.enter)="onEnterPrecio()" />
-      <mat-error *ngIf="productoForm.get('precio')?.hasError('required')">El precio es obligatorio</mat-error>
-      <mat-error *ngIf="productoForm.get('precio')?.hasError('min')">El precio debe ser mayor que 0</mat-error>
-    </mat-form-field>
-
-    
-    <mat-form-field>
-      <mat-label>Stock</mat-label>
-      <input matInput type="number" formControlName="stock" required #stockInput (keydown.enter)="onEnterStock()" />
-      <mat-error *ngIf="productoForm.get('stock')?.hasError('required')">El stock es obligatorio</mat-error>
-      <mat-error *ngIf="productoForm.get('stock')?.hasError('min')">El stock debe ser mayor que 0</mat-error>
-    </mat-form-field>
-
- 
-    <mat-form-field>
-      <mat-label>Proveedor</mat-label>
-      <input matInput formControlName="proveedor" required #proveedorInput (keydown.enter)="onEnterProveedor()" />
-      <mat-error *ngIf="productoForm.get('proveedor')?.hasError('required')">El proveedor es obligatorio</mat-error>
-    </mat-form-field>
-
- 
-
-
-<mat-form-field appearance="fill">
-  <mat-label>Categoria</mat-label>
-  <mat-select formControlName="categoria">
-    <mat-option *ngFor="let categoria of categorias" [value]="categoria">
-      {{ categoria }}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
-
-
-
-
-
-
-<mat-dialog-actions>
-  <button mat-button (click)="cerrar()">Cancelar</button>
-  <button mat-button [disabled]="productoForm.invalid" (click)="data?.producto ? actualizarProducto() : crearProducto()">
-    Guardar
-  </button>
-</mat-dialog-actions>
- -->
-
-
 
 
 
@@ -114,14 +47,17 @@
       <mat-error *ngIf="productoForm.get('proveedor')?.hasError('required')">El proveedor es obligatorio</mat-error>
     </mat-form-field>
 
-    <mat-form-field appearance="fill">
+     <mat-form-field appearance="fill">
       <mat-label>Categoria</mat-label>
       <mat-select formControlName="categoria" (keydown.enter)="onEnterCategoria()">
         <mat-option *ngFor="let categoria of categorias" [value]="categoria">
           {{ categoria }}
         </mat-option>
       </mat-select>
-    </mat-form-field>
+    </mat-form-field> 
+
+
+
 
   </form>
 </mat-dialog-content>
