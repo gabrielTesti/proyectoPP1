@@ -15,6 +15,10 @@ public class Producto {
     private String nombre;
     private double precio;
     private Integer stock;
+    private String proveedor;
+
+    @Enumerated(EnumType.STRING) // Indica que el Enum se almacenará como texto en la base de datos
+    private Categoria categoria;
 
 
     public Long getId() {
@@ -48,4 +52,22 @@ public class Producto {
     public void setStock(Integer stock) {
         this.stock = stock;
     }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+
+    public String getProveedor(){return proveedor;}
+
+    public void setProveedor(String proveedor){this.proveedor = proveedor;}
+
 }
+
+
+
+

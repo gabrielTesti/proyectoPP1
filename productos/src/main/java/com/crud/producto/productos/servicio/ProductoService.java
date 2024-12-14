@@ -1,12 +1,15 @@
 package com.crud.producto.productos.servicio;
 
+import com.crud.producto.productos.modelo.Categoria;
 import com.crud.producto.productos.modelo.Producto;
 import com.crud.producto.productos.repositorio.ProductoRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductoService {
@@ -42,6 +45,8 @@ public class ProductoService {
         productoExistente.setNombre(detallesProducto.getNombre());
         productoExistente.setPrecio(detallesProducto.getPrecio());
         productoExistente.setStock(detallesProducto.getStock());
+        productoExistente.setCategoria(detallesProducto.getCategoria());
+        productoExistente.setProveedor(detallesProducto.getProveedor());
 
         // 3. Guardar el producto actualizado
         return productoRepositorio.save(productoExistente);
@@ -60,7 +65,11 @@ public class ProductoService {
 
 
 
-
-
+    // Método para obtener las categorías del ENUM
+    public List<String> obtenerCategorias() {
+        return Arrays.stream(Categoria.values())
+                .map(Categoria::name)  // Convertir el ENUM a String
+                .collect(Collectors.toList());  // Coleccionarlos en una lista
+    }
 
 }
