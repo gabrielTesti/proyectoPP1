@@ -10,6 +10,11 @@
     </button>
   </div>
 
+  <div class="botones-orden">
+    <button mat-raised-button color="primary" (click)="ordenarPorPrecio()">Ordenar por Precio</button>
+    <button mat-raised-button color="accent" (click)="ordenarPorStock()">Ordenar por Stock</button>
+  </div>
+
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
     <!-- columna id -->
     <ng-container matColumnDef="id">

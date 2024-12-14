@@ -72,4 +72,13 @@ public class ProductoService {
                 .collect(Collectors.toList());  // Coleccionarlos en una lista
     }
 
+
+    public List<Producto> obtenerProductosOrdenadosPorPrecioDesc() {
+        return productoRepositorio.findByOrderByPrecioDesc();
+    }
+
+    public List<Producto> obtenerProductosOrdenadosPorStockDesc() {
+        return productoRepositorio.findByOrderByStockDesc();
+    }
+
 }

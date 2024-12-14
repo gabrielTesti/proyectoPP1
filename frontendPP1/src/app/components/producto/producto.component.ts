@@ -140,6 +140,14 @@ abrirDialogoEditar(producto: Producto):void{
 
 }
 
+ordenarPorPrecio(): void {
+  this.dataSource.data = this.dataSource.data.slice().sort((a, b) => b.precio - a.precio);
+}
+
+ordenarPorStock(): void {
+  this.dataSource.data = this.dataSource.data.slice().sort((a, b) => b.stock - a.stock);
+}
+
 
 
 

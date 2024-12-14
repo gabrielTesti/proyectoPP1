@@ -70,8 +70,21 @@ public class ProductoController {
 
     }
 
+    @GetMapping("/ordenar-por-precio")
+    public ResponseEntity<List<Producto>> obtenerProductosPorPrecioDesc() {
+        List<Producto> productosOrdenados = productoService.obtenerProductosOrdenadosPorPrecioDesc();
+        return ResponseEntity.ok(productosOrdenados);
+    }
 
+    @GetMapping("/ordenar-por-stock")
+    public ResponseEntity<List<Producto>> obtenerProductosPorStockDesc() {
+        List<Producto> productosOrdenados = productoService.obtenerProductosOrdenadosPorStockDesc();
+        return ResponseEntity.ok(productosOrdenados);
+    }
 }
+
+
+
 
 
 
